@@ -6,7 +6,8 @@ function fn() {
   }
   var config = {
     env: env,
-    myVarName: 'someValue'
+    myVarName: 'someValue',
+    baseUrl: 'https://87z71f2mxj.execute-api.us-west-2.amazonaws.com/prod',
   }
   if (env == 'dev') {
     // customize
