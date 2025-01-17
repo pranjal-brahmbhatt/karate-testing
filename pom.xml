@@ -1,70 +1,83 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
- 
+
     <groupId>io.karatelabs</groupId>
     <artifactId>karate-template</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-     <repositories>
+    <repositories>
         <repository>
-        <id>digy-repo</id>
-        <url>https://github.com/Digy4/digyrunner</url>
-    </repository>
-   
-	</repositories>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+        <repository>
+            <id>digy-repo</id>
+            <url>https://github.com/Digy4/digyrunner</url>
+        </repository>
 
- 
+    </repositories>
+
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
         <maven.compiler.version>3.11.0</maven.compiler.version>
-        <maven.surefire.version>3.0.0</maven.surefire.version>        
+        <maven.surefire.version>3.0.0</maven.surefire.version>
         <karate.version>1.5.1</karate.version>
-    </properties>    
+    </properties>
 
-    <dependencies>  
-    <!-- DigyRunner core dependency -->
-    <dependency>
-    <groupId>com.digy4</groupId>
-    <artifactId>digy-runner-core</artifactId>
-    <version>0.0.97</version>
-   
-</dependency>
- <!-- Karate -->
-    <dependency>
-        <groupId>com.intuit.karate</groupId>
-        <artifactId>karate-junit5</artifactId>
-        <version>1.3.1</version> 
-    </dependency>
+    <dependencies>
 
-    <!-- Jackson Databind -->
-    <dependency>
-        <groupId>com.fasterxml.jackson.core</groupId>
-        <artifactId>jackson-databind</artifactId>
-        <version>2.15.2</version>
-    </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>2.0.9</version>
+        </dependency>
 
-    <!-- JUnit 5 -->
-    <dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter</artifactId>
-        <version>5.10.0</version> 
-    </dependency>
 
-    
+        <!-- DigyRunner core dependency -->
+        <dependency>
+            <groupId>com.digy4</groupId>
+            <artifactId>digy-runner-core</artifactId>
+            <version>0.0.97</version>
+
+        </dependency>
+        <!-- Karate -->
+        <dependency>
+            <groupId>com.intuit.karate</groupId>
+            <artifactId>karate-junit5</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <!-- Jackson Databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.15.2</version>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+        </dependency>
+
+
         <dependency>
             <groupId>com.digy4</groupId>
             <artifactId>digy-runner-latest</artifactId>
-            <version>0.0.97 </version>
-             <scope>test</scope>
-        </dependency>     
+            <version>0.0.97</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>io.karatelabs</groupId>
             <artifactId>karate-junit5</artifactId>
             <version>1.5.1</version>
             <scope>test</scope>
-        </dependency>		
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -81,6 +94,7 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>${maven.compiler.version}</version>
+
                 <configuration>
                     <encoding>UTF-8</encoding>
                     <source>${java.version}</source>
@@ -90,12 +104,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>${maven.surefire.version}</version>
+                <version>3.0.0</version>
                 <configuration>
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                 </configuration>
-            </plugin>          
-        </plugins>        
-    </build>       
-    
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
